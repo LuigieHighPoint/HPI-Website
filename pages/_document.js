@@ -10,7 +10,8 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
         <link rel="icon" href="/logo.png" />
-        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places" async defer />
+        {/* Add Google Places script here once you have a real API key: */}
+        {/* <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places" async defer /> */}
       </Head>
       <body>
         <Main />

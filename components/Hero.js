@@ -1,27 +1,12 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { useLang } from './LangContext'
+import AddressAutocomplete from './AddressAutocomplete'
 
 export default function Hero() {
   const { t } = useLang()
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [btnText, setBtnText] = useState(null)
-  const addressRef = useRef(null)
-
-  useEffect(() => {
-    if (typeof window === 'undefined' || !window.google?.maps?.places) return
-    const autocomplete = new window.google.maps.places.Autocomplete(addressRef.current, {
-      types: ['address'],
-      componentRestrictions: { country: 'us' },
-    })
-    autocomplete.setFields(['formatted_address'])
-    autocomplete.addListener('place_changed', () => {
-      const place = autocomplete.getPlace()
-      if (place.formatted_address) {
-        addressRef.current.value = place.formatted_address
-      }
-    })
-  }, [])
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -75,17 +60,13 @@ export default function Hero() {
 
           {submitted ? (
             <div className="form-success" style={{ display: 'block' }}>
-              <div className="success-icon">✅</div>
+              <div className="success-icon">✓</div>
               <h4>{t.successTitle}</h4>
               <p>{t.successMsg}</p>
             </div>
           ) : (
             <div className="form-body">
               <form onSubmit={handleSubmit}>
-                <div className="field">
-                  <label>{t.labelAddress}</label>
-                  <input ref={addressRef} type="text" name="property_address" placeholder={t.placeholderAddress} required autoComplete="off" />
-                </div>
                 <div className="form-row">
                   <div className="field">
                     <label>{t.labelName}</label>
@@ -99,6 +80,10 @@ export default function Hero() {
                 <div className="field">
                   <label>{t.labelEmail}</label>
                   <input type="email" name="email" placeholder={t.placeholderEmail} required />
+                </div>
+                <div className="field">
+                  <label>{t.labelAddress}</label>
+                  <AddressAutocomplete name="property_address" placeholder={t.placeholderAddress} required />
                 </div>
                 <div className="field">
                   <label>{t.labelSituation}</label>

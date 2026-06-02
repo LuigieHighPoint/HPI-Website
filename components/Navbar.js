@@ -43,7 +43,22 @@ export default function Navbar({ activeTab, onTabChange }) {
             <li><a href="#get-offer" className="nav-cta">{t.navCta}</a></li>
           </ul>
         )}
-        {activeTab === 'projects' && <ul className="nav-links" />}
+        {activeTab === 'projects' && (
+          <ul className="nav-links">
+            <li>
+              <button className="nav-cta" style={{ border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}
+                onClick={() => {
+                  const el = document.querySelector('.proj-about')
+                  if (!el) return
+                  const top = el.getBoundingClientRect().top + window.scrollY
+                  const offset = top - (window.innerHeight / 2 - el.offsetHeight / 2)
+                  window.scrollTo({ top: offset, behavior: 'smooth' })
+                }}>
+                Contact Me
+              </button>
+            </li>
+          </ul>
+        )}
       </nav>
     </>
   )
