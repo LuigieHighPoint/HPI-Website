@@ -400,7 +400,7 @@ nav {
 
 /* CTA */
 .cta-sec { padding: 6rem 5vw; text-align: center; position: relative; overflow: hidden; }
-.cta-sec::before { content: 'HIGH POINT'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 17vw; color: rgba(15,33,55,0.04); white-space: nowrap; pointer-events: none; font-weight: 700; }
+.cta-sec::before { display: none; }
 .cta-sec .sec-ttl { white-space: nowrap; font-size: clamp(1.2rem, 3vw, 2.2rem); }
 .cta-sec .sec-sub { margin-bottom: 0.5rem; }
 .cta-phone { display: block; font-size: 4rem; font-weight: 700; color: var(--navy); text-decoration: none; margin-bottom: 0.35rem; transition: color 0.2s; }
