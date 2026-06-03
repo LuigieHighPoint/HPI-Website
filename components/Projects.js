@@ -62,21 +62,24 @@ function StatusBadge({ status }) {
 }
 
 function PropertyCard({ address, cityState, link, linkLabel, status, photo }) {
-  return (
-    <div className="proj-card">
+  const cardInner = (
+    <>
       <div className="proj-img" style={photo ? { backgroundImage: `url(${photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
         <StatusBadge status={status} />
       </div>
       <div className="proj-body">
         <p className="proj-address">{address}</p>
         {cityState && <p className="proj-city">{cityState}</p>}
-        {link && (
-          <a className="proj-link" href={link} target="_blank" rel="noopener noreferrer">
-            {linkLabel} →
-          </a>
-        )}
+        {link && <span className="proj-link">{linkLabel} →</span>}
       </div>
-    </div>
+    </>
+  )
+  return link ? (
+    <a className="proj-card proj-card-link" href={link} target="_blank" rel="noopener noreferrer">
+      {cardInner}
+    </a>
+  ) : (
+    <div className="proj-card">{cardInner}</div>
   )
 }
 

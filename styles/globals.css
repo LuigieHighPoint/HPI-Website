@@ -121,6 +121,7 @@ nav {
   border: 1px solid rgba(255,255,255,0.06); transition: transform 0.2s, box-shadow 0.2s;
 }
 .proj-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,0.4); }
+.proj-card-link { display: block; text-decoration: none; color: inherit; cursor: pointer; }
 
 .proj-img {
   width: 100%; height: 260px; background: var(--navy3);
@@ -451,7 +452,7 @@ footer { background: var(--navy); padding: 3rem 5vw; }
 @media (max-width: 768px) {
   /* Nav layout */
   nav { grid-template-columns: 1fr; height: auto; padding: 0.75rem 4vw; gap: 0.75rem; }
-  .nav-logo { height: 50px; justify-self: center; }
+  .nav-logo { height: 75px; justify-self: center; }
   .nav-tabs { justify-self: center; }
   .nav-tab { padding: 0.4rem 1rem; font-size: 0.75rem; }
   /* Hide regular nav links on mobile but keep CTA buttons visible */
@@ -523,7 +524,7 @@ footer { background: var(--navy); padding: 3rem 5vw; }
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.9rem; }
   .nav-tab { padding: 0.35rem 0.8rem; font-size: 0.7rem; }
-  .nav-logo { height: 44px; }
+  .nav-logo { height: 65px; }
   .cta-phone { font-size: 1.8rem; }
   .bene-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
