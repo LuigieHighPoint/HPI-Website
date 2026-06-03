@@ -22,13 +22,13 @@ export default function Navbar({ activeTab, onTabChange }) {
         <div className="nav-tabs">
           <button
             className={`nav-tab ${activeTab === 'buyers' ? 'active' : ''}`}
-            onClick={() => onTabChange('buyers')}
+            onClick={() => { onTabChange('buyers'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
           >
             {t.tabBuyers}
           </button>
           <button
             className={`nav-tab ${activeTab === 'projects' ? 'active' : ''}`}
-            onClick={() => onTabChange('projects')}
+            onClick={() => { onTabChange('projects'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
           >
             {t.tabProjects}
           </button>

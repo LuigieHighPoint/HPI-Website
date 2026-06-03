@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useLang } from './LangContext'
-import AddressAutocomplete from './AddressAutocomplete'
 
 export default function Hero() {
   const { t } = useLang()
@@ -83,7 +82,17 @@ export default function Hero() {
                 </div>
                 <div className="field">
                   <label>{t.labelAddress}</label>
-                  <AddressAutocomplete name="property_address" placeholder={t.placeholderAddress} required />
+                  <input type="text" name="property_address" placeholder={t.placeholderAddress} required autoComplete="off" />
+                </div>
+                <div className="form-row form-row-citytip">
+                  <div className="field">
+                    <label>{t.labelCity}</label>
+                    <input type="text" name="city" placeholder={t.placeholderCity} required />
+                  </div>
+                  <div className="field">
+                    <label>{t.labelZip}</label>
+                    <input type="text" name="zip" placeholder={t.placeholderZip} required />
+                  </div>
                 </div>
                 <div className="field">
                   <label>{t.labelSituation}</label>
