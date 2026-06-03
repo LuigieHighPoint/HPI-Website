@@ -54,7 +54,7 @@ export default function Navbar({ activeTab, onTabChange }) {
                   const offset = top - (window.innerHeight / 2 - el.offsetHeight / 2)
                   window.scrollTo({ top: offset, behavior: 'smooth' })
                 }}>
-                Contact Me
+                {t.projContactMe}
               </button>
             </li>
           </ul>
