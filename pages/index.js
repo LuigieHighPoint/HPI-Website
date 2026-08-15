@@ -8,6 +8,7 @@ import Benefits from '../components/Benefits'
 import Meet from '../components/Meet'
 import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
+import PrivacyPolicy from '../components/PrivacyPolicy'
 import Areas from '../components/Areas'
 import { CTA, Footer } from '../components/CTAFooter'
 import Projects from '../components/Projects'
@@ -32,6 +33,7 @@ export default function Home() {
           <Meet />
           <Testimonials />
           <FAQ />
+          <PrivacyPolicy />
           <Areas />
           <CTA />
         </>
