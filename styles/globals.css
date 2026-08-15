@@ -89,6 +89,7 @@ nav {
 .nav-tabs {
   display: flex; align-items: center; justify-content: center;
   border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; overflow: hidden;
+  min-width: fit-content;
 }
 .nav-tab {
   background: transparent; border: none; cursor: pointer;

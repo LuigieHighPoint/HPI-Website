@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
@@ -13,7 +14,12 @@ import { CTA, Footer } from '../components/CTAFooter'
 import Projects from '../components/Projects'
 
 export default function Home() {
+  const router = useRouter()
   const [activeTab, setActiveTab] = useState('buyers')
+
+  useEffect(() => {
+    if (router.query.tab === 'projects') setActiveTab('projects')
+  }, [router.query.tab])
 
   return (
     <>

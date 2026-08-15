@@ -1,6 +1,6 @@
 import { useLang } from './LangContext'
 
-export default function Navbar({ activeTab, onTabChange }) {
+export default function Navbar({ activeTab, onTabChange, basePath = '' }) {
   const { lang, t, toggle } = useLang()
   const isEs = lang === 'es'
 
@@ -17,7 +17,7 @@ export default function Navbar({ activeTab, onTabChange }) {
 
       {/* Nav */}
       <nav>
-        <img src="/logo-white.png" alt="High Point Investments LLC" className="nav-logo" />
+        <a href="/"><img src="/logo-white.png" alt="High Point Investments LLC" className="nav-logo" /></a>
 
         <div className="nav-tabs">
           <button
@@ -36,12 +36,12 @@ export default function Navbar({ activeTab, onTabChange }) {
 
         {activeTab === 'buyers' && (
           <ul className="nav-links">
-            <li><a href="#how-it-works">{t.navHow}</a></li>
-            <li><a href="#why-us">{t.navWhy}</a></li>
-            <li><a href="#meet">{t.navAbout}</a></li>
-            <li><a href="#faq">{t.navFaq}</a></li>
+            <li><a href={basePath + '#how-it-works'}>{t.navHow}</a></li>
+            <li><a href={basePath + '#why-us'}>{t.navWhy}</a></li>
+            <li><a href={basePath + '#meet'}>{t.navAbout}</a></li>
+            <li><a href={basePath + '#faq'}>{t.navFaq}</a></li>
             <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="#get-offer" className="nav-cta">{t.navCta}</a></li>
+            <li><a href={basePath + '#get-offer'} className="nav-cta">{t.navCta}</a></li>
           </ul>
         )}
         {activeTab === 'projects' && (
