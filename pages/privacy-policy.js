@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
       </Head>
       <Navbar activeTab="buyers" onTabChange={handleTabChange} basePath="/" />
       <PrivacyPolicy />
-      <CTA />
+      <CTA basePath="/" />
       <Footer />
     </>
   )

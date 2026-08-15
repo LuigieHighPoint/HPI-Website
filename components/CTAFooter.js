@@ -1,6 +1,6 @@
 import { useLang } from './LangContext'
 
-export function CTA() {
+export function CTA({ basePath = '' }) {
   const { t } = useLang()
   return (
     <section className="cta-sec">
@@ -9,7 +9,7 @@ export function CTA() {
       <p className="sec-sub">{t.ctaSub}</p>
       <a href="tel:+19728027521" className="cta-phone">(972) 802-7521</a>
       <span className="cta-phone-lbl">{t.ctaPhoneLbl}</span>
-      <a href="#get-offer" className="btn-gold" style={{ display: 'inline-block' }}>{t.ctaBtn}</a>
+      <a href={basePath + '#get-offer'} className="btn-gold" style={{ display: 'inline-block' }}>{t.ctaBtn}</a>
     </section>
   )
 }
