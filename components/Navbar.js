@@ -40,7 +40,6 @@ export default function Navbar({ activeTab, onTabChange }) {
             <li><a href="#why-us">{t.navWhy}</a></li>
             <li><a href="#meet">{t.navAbout}</a></li>
             <li><a href="#faq">{t.navFaq}</a></li>
-            <li><a href="#privacy-policy">{t.navPrivacy}</a></li>
             <li><a href="#get-offer" className="nav-cta">{t.navCta}</a></li>
           </ul>
         )}
