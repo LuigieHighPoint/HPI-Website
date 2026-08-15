@@ -1,8 +1,19 @@
+import { useState, useEffect, useRef } from 'react'
 import { useLang } from './LangContext'
 
 export default function Navbar({ activeTab, onTabChange, basePath = '' }) {
   const { lang, t, toggle } = useLang()
   const isEs = lang === 'es'
+  const [dropOpen, setDropOpen] = useState(false)
+  const dropRef = useRef(null)
+
+  useEffect(() => {
+    function handleClick(e) {
+      if (dropRef.current && !dropRef.current.contains(e.target)) setDropOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
 
   return (
     <>
@@ -40,12 +51,19 @@ export default function Navbar({ activeTab, onTabChange, basePath = '' }) {
             <li><a href={basePath + '#why-us'}>{t.navWhy}</a></li>
             <li><a href={basePath + '#meet'}>{t.navAbout}</a></li>
             <li><a href={basePath + '#faq'}>{t.navFaq}</a></li>
-            <li className="nav-dropdown-wrap">
-              <a href="/privacy-policy" className="nav-dropdown-trigger">Privacy Policy ▾</a>
-              <ul className="nav-dropdown">
-                <li><a href="/privacy-policy">Privacy Policy</a></li>
-                <li><a href="/sms-consent">SMS Consent</a></li>
-              </ul>
+            <li className="nav-dropdown-wrap" ref={dropRef}>
+              <button
+                className="nav-dropdown-trigger"
+                onClick={() => setDropOpen(o => !o)}
+              >
+                Privacy Policy ▾
+              </button>
+              {dropOpen && (
+                <ul className="nav-dropdown">
+                  <li><a href="/privacy-policy" onClick={() => setDropOpen(false)}>Privacy Policy</a></li>
+                  <li><a href="/sms-consent" onClick={() => setDropOpen(false)}>SMS Consent</a></li>
+                </ul>
+              )}
             </li>
             <li><a href={basePath + '#get-offer'} className="nav-cta">{t.navCta}</a></li>
           </ul>
