@@ -400,6 +400,23 @@ nav {
 .privacy-policy-inner a { color: var(--sky); text-decoration: none; }
 .privacy-policy-inner a:hover { text-decoration: underline; }
 .privacy-divider { border: none; border-top: 1.5px solid var(--border); margin: 3rem 0; }
+
+/* Nav dropdown */
+.nav-dropdown-wrap { position: relative; }
+.nav-dropdown-trigger { cursor: pointer; }
+.nav-dropdown {
+  display: none; position: absolute; top: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%); background: rgba(15,33,55,0.98);
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 6px;
+  list-style: none; padding: 0.4rem 0; min-width: 160px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3); z-index: 300; white-space: nowrap;
+}
+.nav-dropdown-wrap:hover .nav-dropdown { display: block; }
+.nav-dropdown li a {
+  display: block; padding: 0.55rem 1.1rem;
+  color: rgba(255,255,255,0.7) !important; font-size: 0.78rem;
+}
+.nav-dropdown li a:hover { color: var(--white) !important; background: rgba(255,255,255,0.06); }
 .faq-item h4 { font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
 .faq-item p { font-size: 0.875rem; color: var(--text3); line-height: 1.7; font-weight: 300; }
 

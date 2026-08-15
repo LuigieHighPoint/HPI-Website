@@ -40,7 +40,13 @@ export default function Navbar({ activeTab, onTabChange, basePath = '' }) {
             <li><a href={basePath + '#why-us'}>{t.navWhy}</a></li>
             <li><a href={basePath + '#meet'}>{t.navAbout}</a></li>
             <li><a href={basePath + '#faq'}>{t.navFaq}</a></li>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li className="nav-dropdown-wrap">
+              <a href="/privacy-policy" className="nav-dropdown-trigger">Privacy Policy ▾</a>
+              <ul className="nav-dropdown">
+                <li><a href="/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/sms-consent">SMS Consent</a></li>
+              </ul>
+            </li>
             <li><a href={basePath + '#get-offer'} className="nav-cta">{t.navCta}</a></li>
           </ul>
         )}
