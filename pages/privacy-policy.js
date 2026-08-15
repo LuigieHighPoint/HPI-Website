@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import PrivacyPolicy from '../components/PrivacyPolicy'
+import { CTA, Footer } from '../components/CTAFooter'
 
 export default function PrivacyPolicyPage() {
   return (
@@ -9,6 +10,8 @@ export default function PrivacyPolicyPage() {
         <meta name="robots" content="noindex" />
       </Head>
       <PrivacyPolicy />
+      <CTA />
+      <Footer />
     </>
   )
 }
