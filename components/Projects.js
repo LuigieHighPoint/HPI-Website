@@ -1,9 +1,16 @@
 import { useLang } from './LangContext'
 
-const FOR_SALE = []
+const FOR_SALE = [
+  {
+    address: '102 Goodknight Ranch Rd',
+    cityState: 'Trinidad, TX 75163',
+    link: 'https://www.zillow.com/homedetails/102-Goodknight-Ranch-Rd-Trinidad-TX-75163/465532535_zpid/',
+    labelKey: 'projViewZillow',
+    photo: '/102-goodknight-ranch-rd.jpg',
+  },
+]
 
 const COMING_SOON = [
-  { address: '102 Goodknight Ranch Rd', cityState: 'Trinidad, TX 75163' },
   { address: '104 Goodknight Ranch Rd', cityState: 'Trinidad, TX 75163' },
   { address: '712 E 10th St', cityState: 'Kemp, TX 75143' },
 ]
