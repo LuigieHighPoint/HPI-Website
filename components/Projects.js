@@ -5,7 +5,7 @@ const FOR_SALE = [
     address: '102 Goodknight Ranch Rd',
     cityState: 'Trinidad, TX 75163',
     link: 'https://www.zillow.com/homedetails/102-Goodknight-Ranch-Rd-Trinidad-TX-75163/465532535_zpid/',
-    labelKey: 'projViewZillow',
+    labelKey: 'projViewListing',
     photo: '/102-goodknight-ranch-rd.jpg',
   },
 ]
@@ -20,7 +20,7 @@ const SOLD = [
     address: '6131 Inca Dr',
     cityState: 'Mabank, TX 75156',
     link: 'https://www.zillow.com/homedetails/6131-Inca-Dr-Mabank-TX-75156/216466057_zpid/',
-    labelKey: 'projViewZillow',
+    labelKey: 'projViewListing',
     photo: '/6131-inca-dr.jpg',
   },
   {
