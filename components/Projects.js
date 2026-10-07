@@ -1,14 +1,6 @@
 import { useLang } from './LangContext'
 
-const FOR_SALE = [
-  {
-    address: '6131 Inca Dr',
-    cityState: 'Mabank, TX 75156',
-    link: 'https://www.zillow.com/homedetails/6131-Inca-Dr-Mabank-TX-75156/216466057_zpid/',
-    labelKey: 'projViewZillow',
-    photo: '/6131-inca-dr.jpg',
-  },
-]
+const FOR_SALE = []
 
 const COMING_SOON = [
   { address: '102 Goodknight Ranch Rd', cityState: 'Trinidad, TX 75163' },
@@ -17,6 +9,13 @@ const COMING_SOON = [
 ]
 
 const SOLD = [
+  {
+    address: '6131 Inca Dr',
+    cityState: 'Mabank, TX 75156',
+    link: 'https://www.zillow.com/homedetails/6131-Inca-Dr-Mabank-TX-75156/216466057_zpid/',
+    labelKey: 'projViewZillow',
+    photo: '/6131-inca-dr.jpg',
+  },
   {
     address: '709 E 11th St',
     cityState: 'Kemp, TX 75143',
